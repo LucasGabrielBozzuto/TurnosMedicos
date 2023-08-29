@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="turnosmedicos.controller.Detail"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m"
+    
+    xmlns:html="http://www.w3.org/1999/xhtml"
+>
+    <Page id="detailPage"
+        title="{i18n>medico}: {NOMBRE_Y_APELLIDO}"
+        navButtonPress="onNavPress"
+        showNavButton="true">
+
+        <Wizard id="myWizard" 
+        class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+        complete="onCreateTurno">
+            <WizardStep id="NombrePacienteTypeStep"
+                title="{i18n>titulopaciente}"
+                validated="true">
+
+                <Text id="_IDGenText1" class="sapUiSmallMarginBottom"
+                    text="{i18n>infoordenpaciente}"/>
+
+                <HBox id="_IDGenHBox1"
+                    width="100%">
+
+                    <Input id="InputPaciente" placeholder="{i18n>holderPatient}" value="{mTurno>/turno_nuevo/PACIENTE}"></Input>
+
+                </HBox>
+            </WizardStep>
+            <WizardStep id="_IDGenWizardStep1"
+                title="{i18n>titulocalendario}">
+                <Text id="_IDGenText5" class="sapUiSmallMarginBottom"
+                    text="{i18n>infofecha}"/>
+                <u:Calendar width="100%"
+				id="calendar"
+				select="handleCalendarSelect"
+                />
+                <Text id="_IDGenText2" text="{mTurno>/turno_nuevo/Dia}"></Text>
+            </WizardStep>
+            <WizardStep id="_IDGenWizardStep2" title="{i18n>titulohora}">
+                <Text id="_IDGenText4" class="sapUiSmallMarginBottom"
+                text="{i18n>infohora}"/>
+                <List
+                    id="ListaHorarios"
+                    items="{/HORARIOSSet}">  
+                    <items>
+                        <StandardListItem
+                            
+                            id="ObjetoListaHorarios"
+                            title="{HORA}"
+                            info="{path: 'DISPONIBLE', 
+                            formatter:'.formatter.textoTurno'}"
+                            type="Active"
+                            press="onHandleList"
+                            infoState="{path: 'DISPONIBLE', 
+                            formatter:'.formatter.estadoTurno'}"
+                            >
+                        </StandardListItem>
+                    </items>
+                </List>
+                
+            </WizardStep>
+        </Wizard>
+    </Page>
+</mvc:View>

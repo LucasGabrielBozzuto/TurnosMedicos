@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_MEDICOS_06_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="MEDICOS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID_MEDICO"/>
+                </Key>
+                <Property Name="ID_MEDICO" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ID_MEDICO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NOMBRE_Y_APELLIDO" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="NOMBRE_Y_APELLIDO" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ESPECIALIDAD" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="ESPECIALIDAD" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SEXO" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="SEXO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="TURNOS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID_TURNO"/>
+                </Key>
+                <Property Name="ID_TURNO" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ID_MEDICO" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TURNO" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Cronomarcador"/>
+                <Property Name="PACIENTE" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGW_MEDICOS_06_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="MEDICOSSet" EntityType="ZGW_MEDICOS_06_SRV.MEDICOS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="TURNOSSet" EntityType="ZGW_MEDICOS_06_SRV.TURNOS" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://stks4hpil.eastus2.cloudapp.azure.com:8002/sap/opu/odata/sap/ZGW_MEDICOS_06_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://stks4hpil.eastus2.cloudapp.azure.com:8002/sap/opu/odata/sap/ZGW_MEDICOS_06_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

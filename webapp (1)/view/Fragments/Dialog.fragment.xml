@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+    <Dialog id="openDialog" state="Information" type="Message" title="{i18n>verturnTitle}">
+        <content>
+            <List id="_IDGenList1" items="{turnosSacados>/}">
+                <StandardListItem id="_IDGenObjectListItem1" title="{turnosSacados>PACIENTE}" info="{turnosSacados>TURNO}">
+			    </StandardListItem>
+            </List>
+        </content>
+        <buttons>
+            <Button id="BotonEnElDialogo" text="{i18n>cerrar}" press=".closeDialog"/>
+            <!-- <Button id="BotonEnElDialogo2" text="{i18n>acept}" press=".openView"/> -->
+        </buttons>
+        
+    </Dialog>
+</core:FragmentDefinition>

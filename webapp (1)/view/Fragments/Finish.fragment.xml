@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+    <Dialog id="_myDialog" title="{i18n>TituloTurnoSacado}" state="Success" type="Message">
+        <content>
+            <Text class="texto" xmlns="sap.m" 
+            text="{i18n>descTurnoSacado1} {mTurno>/turno_nuevo/Dia} {i18n>descTurnoSacado2} {mTurno>/turno_nuevo/Hora}" 
+            id="text1"></Text>
+        </content>
+        <buttons>
+            <Button id="BotonEnElDialogo" text="{i18n>cerrar}" press=".onNavPress"/>
+            <!-- <Button id="BotonEnElDialogo2" text="{i18n>acept}" press=".openView"/> -->
+        </buttons>
+        
+    </Dialog>
+</core:FragmentDefinition>
